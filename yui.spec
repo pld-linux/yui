@@ -7,10 +7,9 @@ Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/yui/%{name}_%{version}.zip
 # Source0-md5:	41bed4b882c9148cebff5dd1a0dd8727
 URL:		http://developer.yahoo.com/yui/
+BuildRequires:	rpmbuild(macros) >= 1.461
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_phpsharedir	%{_datadir}/php
 
 %description
 The Yahoo! User Interface (YUI) Library is a set of utilities and
@@ -24,9 +23,8 @@ The YUI Library also includes several core CSS resources.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_phpsharedir}/yui
-
-cp -a build/* $RPM_BUILD_ROOT%{_phpsharedir}/yui
+install -d $RPM_BUILD_ROOT%{php_data_dir}/yui
+cp -a build/* $RPM_BUILD_ROOT%{php_data_dir}/yui
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -34,4 +32,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{_phpsharedir}/yui
+%{php_data_dir}/yui
