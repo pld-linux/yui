@@ -10,6 +10,8 @@ URL:		http://developer.yahoo.com/yui/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_phpsharedir	%{_datadir}/php
+
 %description
 The Yahoo! User Interface (YUI) Library is a set of utilities and
 controls, written in JavaScript, for building richly interactive web
@@ -22,7 +24,9 @@ The YUI Library also includes several core CSS resources.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_phpsharedir}/yui
+
+cp -a build/* $RPM_BUILD_ROOT%{_phpsharedir}/yui
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -30,3 +34,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
+%{_phpsharedir}/yui
