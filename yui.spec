@@ -1,11 +1,11 @@
 Summary:	The Yahoo! User Interface Library (YUI)
 Name:		yui
-Version:	2.6.0
+Version:	2.7.0b
 Release:	0.1
 License:	BSD
 Group:		Applications/WWW
-Source0:	http://dl.sourceforge.net/yui/%{name}_%{version}.zip
-# Source0-md5:	41bed4b882c9148cebff5dd1a0dd8727
+Source0:	http://yuilibrary.com/downloads/yui2/%{name}_%{version}.zip
+# Source0-md5:	90778a161ce9108a23a590e5198b8116
 URL:		http://developer.yahoo.com/yui/
 BuildRequires:	rpmbuild(macros) >= 1.461
 BuildArch:	noarch
@@ -31,5 +31,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
 %{php_data_dir}/yui
