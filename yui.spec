@@ -8,6 +8,7 @@ Source0:	http://yuilibrary.com/downloads/yui2/%{name}_%{version}.zip
 # Source0-md5:	90778a161ce9108a23a590e5198b8116
 URL:		http://developer.yahoo.com/yui/
 BuildRequires:	rpmbuild(macros) >= 1.461
+BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
