@@ -1,11 +1,12 @@
 Summary:	The Yahoo! User Interface Library (YUI)
 Name:		yui
-Version:	2.8.2
+Version:	2.9.0
 Release:	1
 License:	BSD
 Group:		Applications/WWW
-Source0:	http://yui.zenfs.com/releases/yui2/%{name}_%{version}r1.zip
-# Source0-md5:	a13570b836fb9fba5d256e094381484b
+# Source0Download: http://yuilibrary.com/download/yui2/
+Source0:	http://yui.zenfs.com/releases/yui2/%{name}_%{version}.zip
+# Source0-md5:	fbd1a6ae610cbf513793677a30ad1497
 URL:		http://developer.yahoo.com/yui/
 BuildRequires:	rpmbuild(macros) >= 1.461
 BuildRequires:	unzip
