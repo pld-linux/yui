@@ -1,0 +1,13 @@
+http://yuilibrary.com/projects/yui2/ticket/2529410
+
+--- yui/build/dragdrop/dragdrop.js~	2010-10-26 21:45:16.000000000 +0300
++++ yui/build/dragdrop/dragdrop.js	2011-11-25 13:15:22.498297613 +0200
+@@ -818,7 +818,7 @@
+                 // var button = e.which || e.button;
+ 
+                 // check for IE mouseup outside of page boundary
+-                if (YAHOO.util.Event.isIE && !e.button) {
++				if (YAHOO.util.Event.isIE && YAHOO.env.ua.ie < 9 && !e.button) {
+                     this.stopEvent(e);
+                     return this.handleMouseUp(e);
+                 } else {
