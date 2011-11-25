@@ -10,6 +10,7 @@ Patch0:		ticket-2529410.patch
 URL:		http://developer.yahoo.com/yui/
 BuildRequires:	rpmbuild(macros) >= 1.461
 BuildRequires:	unzip
+BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,6 +24,8 @@ The YUI Library also includes several core CSS resources.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+
+%{__sed} -i -e 's,YAHOO.util.Event.isIE&&!F.button,YAHOO.util.Event.isIE\&\&YAHOO.env.ua.ie<9\&\&!F.button,g' build/utilities/utilities.js
 
 %install
 rm -rf $RPM_BUILD_ROOT
