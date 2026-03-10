@@ -1,7 +1,7 @@
 Summary:	The Yahoo! User Interface Library (YUI)
 Name:		yui
 Version:	2.9.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/WWW
 # Source0Download: http://yuilibrary.com/download/yui2/
